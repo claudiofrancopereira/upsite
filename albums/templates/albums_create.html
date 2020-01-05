@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<h1>Albums Create</h1>
+	  
+		<div class="albums-create">
+			<form class="site-form" action="{% url 'albums:create' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				
+				{{ form }}
+				
+				<input type="submit" valeu="Create">
+			</form>
+		</div>
+	</body>
+</html>

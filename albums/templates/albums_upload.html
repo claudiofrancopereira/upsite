@@ -1,0 +1,11 @@
+<html>
+	<body>
+		<h1>Albums Upload</h1>
+
+		<form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-primary" type="submit" name="" value="SUBMIT">
+        </form>
+	</body>
+</html>

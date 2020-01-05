@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+	<head>
+		<title>
+			Herrera Jiu-Jitsu Classic School
+		</title>
+
+		<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+	</head>
+
+
+	<body>
+		
+		<div class="navbar">
+			<a href="#home">Academia</a>
+	  		<a href="{% url 'albums:list' %}">Fotos</a>
+	  		<a href="#contato">Contato</a>
+	  		 		
+	  		<div class="navbar_right">
+	  			<a href="#signin">{{ request.user }}</a>
+	  		</div>
+	  		
+		</div>
+
+		{% block content %}
+
+		{% endblock %}
+
+	</body>  
+</html>

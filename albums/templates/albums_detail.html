@@ -1,0 +1,15 @@
+{% extends 'base_layout.html ' %}
+
+{% block content %}
+	<div class="album-detail">
+		<div class="album">
+			<h1>Detalhes</h1>
+			<h2>{{ album.title }}</h2>
+			<p>Created by {{ album.author }} at {{ album.date }}</p>
+
+		</div>
+
+	</div>
+
+{% endblock %}
+

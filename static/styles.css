@@ -1,0 +1,89 @@
+body 
+{
+	background-color: #0f121f;
+}
+
+.navbar 
+{
+	font-family: "Arial", cursive, sans-serif;
+	overflow: hidden;
+	background-color: #333;
+	margin-bottom: 20px;
+}
+
+
+.navbar a 
+{
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar a:hover 
+{
+	background-color: red;
+	color: white;
+}
+
+.navbar_right 
+{
+	float: right;
+}
+
+
+ul.polaroids {
+ 
+    margin: 0 0 18px -30px;
+}
+
+ul.polaroids li{
+	display: inline;
+}
+
+ul.polaroids a{
+	filter: grayscale( 100% );
+	border: 1px solid #cccccc;
+	background: #fff;
+	display: inline;
+	float: left;
+	margin: 0 0 27px 30px;
+	width: auto;
+	padding: 10px 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 18px;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	-webkit-transition: -webkit-transform .15s linear;
+} 
+
+ul.polaroids img{
+	
+	display: block;
+	width: 190px;
+	margin-bottom: 12px;
+}
+
+ul.polaroids a:after{
+	content: attr(title);
+}
+
+ul.polaroids li.messy a{
+	margin-top: -375px;
+	margin-left: 160px;
+}
+
+ul.polaroids li a:hover{
+	filter: none;
+	-webkit-transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+	position: relative;
+	z-index: 5;
+}
