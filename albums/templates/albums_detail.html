@@ -1,15 +1,21 @@
 {% extends 'base_layout.html ' %}
 
 {% block content %}
-	<div class="album-detail">
-		<div class="album">
-			<h1>Detalhes</h1>
-			<h2>{{ album.title }}</h2>
-			<p>Created by {{ album.author }} at {{ album.date }}</p>
-
-		</div>
-
+	<div class="album_details">
+		<h2>Album {{ album.title }}</h2>
+		<h3>Create by {{ album.author }} on {{ album.date }}</h3>
 	</div>
 
+	<ul class="polaroids">
+
+		{% for img in images  %}
+			<li>
+				<a href="" title="Posted by {{ img.posted }}"><img src="{{ img.image.url }}" /></a>
+	
+	    	</li>
+	
+		{% endfor %}
+
+	</ul>
 {% endblock %}
 

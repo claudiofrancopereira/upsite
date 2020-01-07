@@ -7,7 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from django.views.generic.edit import FormView
 #from .forms import FileFieldForm
 
-from .models import Album
+from .models import Album, AlbumImages
 from . import forms
 
 
@@ -34,7 +34,9 @@ def albums_create( request ):
 
 def albums_detail( request, slug ):
     album = Album.objects.get( slug = slug )
-    return render( request, 'albums_detail.html', {'album': album } )
+    images = AlbumImages.objects.filter( album = album )
+
+    return render( request, 'albums_detail.html', {'album': album, 'images': images } )
 
 # def albums_upload( request ):
 # 	list = []

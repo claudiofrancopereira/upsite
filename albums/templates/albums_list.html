@@ -5,7 +5,7 @@
 
 	{% for album in albums %}
 		<li>
-			<a href="img_5terre.jpg" title="{{ album.title }}">
+			<a href="{{ album.get_absolute_url }}" title="{{ album.title }}">
 				<img src="https://image.ibb.co/b8UJBc/administration_architecture_big_ben_221166.jpg">
 			</a>
     	</li>

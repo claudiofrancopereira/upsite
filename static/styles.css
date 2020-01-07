@@ -87,3 +87,8 @@ ul.polaroids li a:hover{
 	position: relative;
 	z-index: 5;
 }
+
+.album_details h2, h3 {
+	color: yellow;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
