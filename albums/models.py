@@ -18,10 +18,16 @@ class Album( models.Model ):
 	def get_absolute_url( self ):
 		return reverse( "albums:detail", kwargs = { "slug": self.slug } )
 
+def generate_path( self, filename ):
+	path = "albums/" + str(self.album.slug) + "/" + filename
+	return path
+
 class AlbumImages( models.Model ):
     album = models.ForeignKey( Album, on_delete = models.CASCADE )
-    image = models.ImageField( upload_to = 'albums/images' )
+    image = models.ImageField( upload_to = generate_path )
     posted = models.ForeignKey( User, default = None, on_delete = models.CASCADE )
     
     def __unicode__( self ):
     	return self.album.title
+
+

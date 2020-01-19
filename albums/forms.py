@@ -4,4 +4,4 @@ from . import models
 class CreateAlbum( forms.ModelForm ):
 	class Meta:
 		model = models.Album
-		fields = [ 'title', 'description']
+		fields = [ 'title', 'description', 'slug' ]

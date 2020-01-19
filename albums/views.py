@@ -1,12 +1,6 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
-from django.core.files.storage import FileSystemStorage
-
-from django.views.generic.edit import FormView
-#from .forms import FileFieldForm
-
 from .models import Album, AlbumImages
 from . import forms
 
@@ -24,7 +18,11 @@ def albums_create( request ):
             instance = form.save( commit = False )
             instance.author = request.user
             instance.save()
-        
+
+            for f in request.FILES.getlist( 'files' ):
+                image = AlbumImages( album = Album.objects.get( title = instance.title ), image = f, posted = instance.author )
+                image.save()
+
             return redirect( 'albums:list' )
     else:
         form = forms.CreateAlbum()
@@ -49,23 +47,3 @@ def albums_detail( request, slug ):
 
 # 		print( list )
 
-# 	return render( request, 'albums_upload.html', {'files': list } )
-# # Create your views here.
-
-# class FileFieldView(FormView):
-#     form_class = FileFieldForm
-#     template_name = 'albums_upload.html'  # Replace with your template.
-#     success_url = '...'  # Replace with your URL or reverse().
-
-#     def post(self, request, *args, **kwargs):
-#         form_class = self.get_form_class()
-#         form = self.get_form(form_class)
-#         files = request.FILES.getlist('file_field')
-#         if form.is_valid():
-#             for f in files:
-#                 instance = Image(image=file)  # match the model.
-#                 instance.save()
-#             return self.form_valid(form)
-#         else:
-#         	print( form )
-#         	return self.form_invalid(form)

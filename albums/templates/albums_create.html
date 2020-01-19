@@ -6,9 +6,11 @@
 			<form class="site-form" action="{% url 'albums:create' %}" method="post" enctype="multipart/form-data">
 				{% csrf_token %}
 				
-				{{ form }}
+				{{ form.as_p }}
 				
-				<input type="submit" valeu="Create">
+				<p><input type="file" name="files" multiple /></p>
+			
+				<p><input type="submit" valeu="Create"></p>
 			</form>
 		</div>
 	</body>
