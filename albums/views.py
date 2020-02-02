@@ -7,6 +7,8 @@ from . import forms
 
 def albums_list( request ):
     albums = Album.objects.all()
+    images = AlbumImages.objects.all()
+    print( images ) 
     return render( request, 'albums_list.html', { 'albums': albums } )
 
 @login_required( login_url='/accounts/login/')
@@ -35,15 +37,3 @@ def albums_detail( request, slug ):
     images = AlbumImages.objects.filter( album = album )
 
     return render( request, 'albums_detail.html', {'album': album, 'images': images } )
-
-# def albums_upload( request ):
-# 	list = []
-
-# 	if request.method == "POST":
-
-# 		for f in request.FILES.getlist('files_to_be_upload'):
-# 			filename = f.name
-# 			list.append( filename )
-
-# 		print( list )
-
